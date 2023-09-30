@@ -1,43 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <table>
+      <colgroup>
+        <col style="width: 15%" />
+        <col style="width: 15%" />
+        <col style="width: 40%" />
+        <col style="width: 30%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td valign="TOP">
+            <ul>
+              <li><a href="#">Account</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Sources</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Studio</a></li>
+              <li><a href="#">Commons</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </td>
+          <td valign="TOP">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="#">Modules</a></li>
+              <li><a href="#">Piazza</a></li>
+              <li><a href="#">Zoom Meetings</a></li>
+              <li><a href="#">Assignments</a></li>
+              <li><a href="#">Quizzes</a></li>
+              <li><a href="grades.html">Grades</a></li>
+              <li><a href="#">People</a></li>
+              <li><a href="#">Panopto Video</a></li>
+              <li><a href="#">Discussions</a></li>
+              <li><a href="#">Annoucements</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Files</a></li>
+              <li><a href="#">Rubrics</a></li>
+              <li><a href="#">Outcomes</a></li>
+              <li><a href="#">Collaborations</a></li>
+              <li><a href="#">Syllabus</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </td>
+          <td valign="TOP">
+            <table>
+              <tr valign="TOP">
+                <td><button type="button">Collapse All</button></td>
+                <td><button type="button">View Progress</button></td>
+                <td><button type="button">Publish All</button></td>
+                <td><button type="button">Module</button></td>
+              </tr>
+              <tr>
+                <ul>
+                  <li>
+                    Week 0 - Intro
+                    <ul>
+                      <li>
+                        LEARNING OBJECTIVES
+                        <ul>
+                          <li>Introduction to the course</li>
+                          <li>Learn what is Web Development</li>
+                          <li>Creating a development environment</li>
+                          <li>Creating a Web Application</li>
+                          <li>Getting started with the 1st assignment</li>
+                        </ul>
+                      </li>
+                      <li>
+                        READING
+                        <ul>
+                          <li>
+                            Full Stack Developer - Chapter 1 - Introduction
+                          </li>
+                          <li>
+                            Full Stack Developer - Chapter 2 - Creating User
+                            Interfaces With HTML
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        SLIDES
+                        <ul>
+                          <li>
+                            Introduction to Web Development Links to an external
+                            site.
+                          </li>
+                          <li>
+                            Creating and HTTP Server with Node.js Links to an
+                            external site.
+                          </li>
+                          <li>
+                            Creating a React Application Links to an external
+                            site.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    WEEK 1 - HTML
+                    <ul>
+                      <li>
+                        LEARNING OBJECTIVES
+                        <ul>
+                          <li>Learn how to create user interfaces with HTML</li>
+                          <li>Keep working on assignment 1</li>
+                          <li>Deploy the assignment to Netlify</li>
+                        </ul>
+                      </li>
+                      <li>
+                        READING
+                        <ul>
+                          <li>
+                            Full Stack Developer - Chapter 1 - Introduction
+                          </li>
+                          <li>
+                            Full Stack Developer - Chapter 2 - Creating User
+                            Interfaces With HTML
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </tr>
+            </table>
+          </td>
+          <td valign="TOP">
+            <table>
+              <thead>
+                <tr valign="TOP">
+                  <h3>Course Status</h3>
+                </tr>
+                <tr valign="TOP">
+                  <td><button type="button">Unpublish</button></td>
+                  <td><button type="button">Published</button></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <ul>
+                    <li>Import Existing Content</li>
+                    <li>Import From Commons</li>
+                    <li>Choose Home Page</li>
+                    <li>View Course Stream</li>
+                    <li>New Announcements</li>
+                    <li>New Analytics</li>
+                    <li>View Course Notifications</li>
+                  </ul>
+                </tr>
+                <tr>
+                  <h3>Comming Up</h3>
+                </tr>
+                <tr>
+                  View Calendar
+                  <ul>
+                    <li>Lecture CS4550.12631.202410 Sep 7 at 11:45 am</li>
+                    <li>Lecture CS4550.12631.202410 Sep 11 at 11:45 am</li>
+                    <li>CS5610 06 SP23 Lecture Sep 11 at 6 pm</li>
+                  </ul>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
