@@ -17,9 +17,9 @@
         <tr>
           <td valign="TOP">
             <ul>
-              <li><a href="kanbas/profile/index.html">Account</a></li>
+              <li><a href="../../profile/index.html">Account</a></li>
               <li><a href="#">Dashboard</a></li>
-              <li><a href="kanbas/home.html">Courses</a></li>
+              <li><a href="../home.html">Courses</a></li>
               <li><a href="#">Calendar</a></li>
               <li><a href="#">Inbox</a></li>
               <li><a href="#">History</a></li>
@@ -30,13 +30,13 @@
           </td>
           <td valign="TOP">
             <ul>
-              <li><a href="kanbas/home.html">Home</a></li>
+              <li><a href="../home.html">Home</a></li>
               <li><a href="#">Modules</a></li>
               <li><a href="#">Piazza</a></li>
               <li><a href="#">Zoom Meetings</a></li>
-              <li><a href="kanbas/assignments/index.html">Assignments</a></li>
+              <li><a href="../assignments/index.html">Assignments</a></li>
               <li><a href="#">Quizzes</a></li>
-              <li><a href="kanbas/grades.html">Grades</a></li>
+              <li><a href="../grades.html">Grades</a></li>
               <li><a href="#">People</a></li>
               <li><a href="#">Panopto Video</a></li>
               <li><a href="#">Discussions</a></li>
@@ -48,37 +48,57 @@
               <li><a href="#">Collaborations</a></li>
               <li><a href="#">Syllabus</a></li>
               <li>
-                <a href="kanbas/Settings/course-details.html">Settings</a>
+                <a href="course-details.html">Settings</a>
               </li>
             </ul>
           </td>
           <td>
             <table>
               <tr valign="TOP">
-                <td></td>
-                <td>
+                <td colspan="2">
                   <table>
                     <tr>
-                      <td><a href="course-details.html">Course Details</a></td>
-                      <td><a href="#">Sections</a></td>
-                      <td><a href="navigation.html">Navigation</a></td>
-                      <td><a href="#">Apps</a></td>
-                      <td><a href="#">Feature Options</a></td>
-                      <td><a href="#">Integrations</a></td>
+                      <td>
+                        <a href="course-details.html">Course Details</a>
+                        &nbsp;
+                        <a href="#">Sections</a>
+                        &nbsp;
+                        <a href="navigation.html">Navigation</a>
+                        &nbsp;
+                        <a href="#">Apps</a>
+                        &nbsp;
+                        <a href="#">Feature Options</a>
+                        &nbsp;
+                        <a href="#">Integrations</a>
+                      </td>
                     </tr>
                   </table>
                 </td>
               </tr>
               <form action="#">
                 <tr valign="TOP">
-                  <td></td>
                   <td>
                     <h2>Course Details</h2>
                   </td>
                 </tr>
                 <tr valign="TOP">
                   <td>Image:</td>
-                  <td><input type="file" id="myFile" name="couseImage" /></td>
+                  <td>
+                    <div
+                      style="
+                        border: 1px solid grey;
+                        width: 200px;
+                        height: 130px;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    >
+                      <button type="button">Choose Image</button>
+                    </div>
+                  </td>
                 </tr>
                 <tr valign="TOP">
                   <td>
