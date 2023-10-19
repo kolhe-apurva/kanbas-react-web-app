@@ -1,0 +1,52 @@
+.side-navbar {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 75px;
+  padding: 2px;
+}
+
+/* Link reset to remove the underlines from links */
+.nav-item > a:link,
+.nav-item > a:visited,
+.nav-item > a:hover,
+.nav-item > a:active {
+  text-decoration: none;
+  color: white; /* Set the default link color to white */
+}
+
+.side-navbar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.side-navbar-text {
+  font-size: 11px;
+  padding: 0; /* Adjust padding to meet spacing requirements */
+}
+
+/* Icons */
+.icon {
+  font-size: 20px; /* Adjust size as needed */
+  margin: 3px 3px; /* Adjust margin as needed */
+  color: red; /* Default color for icons */
+}
+
+.middle-navbar {
+  box-sizing: border-box;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  width: 200px;
+  padding: 2px;
+}

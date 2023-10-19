@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="grades.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://icons.getbootstrap.com/" />
+    <!-- scripts to run toggle-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="side-navbar col-2 col-sm-2 col-md-1 col-lg-1 col-xl-1"
+          style="padding: 0; margin: 0"
+        >
+          <ul>
+            <li class="nav-item">
+              <a href="#">
+                <div class="icon">
+                  <img
+                    src="../../northeastern-university-logo.png"
+                    class="img-fluid"
+                    style="object-fit: contain"
+                  />
+                </div>
+              </a>
+            </li>
+            <br />
+            <li class="nav-item">
+              <a href="../../profile/index.html">
+                <div class="fa-2x" style="color: grey">
+                  <i class="fa-regular fa-circle-user"></i>
+                </div>
+                <div class="side-navbar-text">Account</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../../dashboard/index.html">
+                <div class="fa-2x icon">
+                  <i class="fa-solid fa-gauge"></i>
+                </div>
+                <div class="side-navbar-text">Dashboard</div>
+              </a>
+            </li>
+            <li class="nav-item" style="background-color: white">
+              <a href="../home.html">
+                <div class="fa-2x icon">
+                  <i class="fa-solid fa-book"></i>
+                </div>
+                <div class="side-navbar-text" style="color: red">
+                  Courses
+                </div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                <div class="fa-2x icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <div class="side-navbar-text">Calendar</div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                <div class="fa-2x icon">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div class="side-navbar-text">Inbox</div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                <div class="fa-2x icon">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="side-navbar-text">History</div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                <div class="fa-2x icon">
+                  <i class="fa-solid fa-tv"></i>
+                </div>
+                <div class="side-navbar-text">Studio</div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                <div class="fa-2x icon">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                </div>
+                <div class="side-navbar-text">Commons</div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#">
+                <div class="fa-2x icon">
+                  <i class="fa-regular fa-circle-question"></i>
+                </div>
+                <div class="side-navbar-text">Help</div></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 pe-4 mb-5">
+          <div
+            class="row border-bottom-1 align-content-center align-middle pt-2"
+          >
+            <div class="col-1" style="text-align: center">
+              <div class="fa-2x icon">
+                <i class="fa-solid fa-bars" style="color: #ff0000"></i>
+              </div>
+            </div>
+            <div class="col-11">
+              <h3 class="page-heading" style="text-align: left">
+                <nav
+                  style="--bs-breadcrumb-divider: '>'; background-color: white"
+                  aria-label="breadcrumb"
+                >
+                  <ol class="bg-color-white breadcrumb">
+                    <li class="breadcrumb-item red-table-name">
+                      <a href="../home.html">CS4500.12631.202410</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Grades
+                    </li>
+                  </ol>
+                </nav>
+              </h3>
+            </div>
+          </div>
+          <div class="row mt-1 mb-1 me-5 ms-2">
+            <hr class="bg-black" />
+          </div>
+          <div class="row me-2">
+            <div class="d-none d-sm-block col-md-2 col-lg-2 col-xl-2 ps-4">
+              <div class="second-sidebar-ul">
+                <ul>
+                  <li class="second-navbar-item">
+                    <a href="../home.html">Home</a>
+                  </li>
+                  <li class="second-navbar-item">
+                    <a href="../modules.html">Modules</a>
+                  </li>
+                  <li class="second-navbar-item"><a href="#">Piazza</a></li>
+                  <li class="second-navbar-item">
+                    <a href="#">Zoom Meetings</a>
+                  </li>
+                  <li class="second-navbar-item">
+                    <a href="../assignments/index.html">Assignments</a>
+                  </li>
+                  <li class="second-navbar-item"><a href="#">Quizzes</a></li>
+                  <li class="second-navbar-active-item pb-1 pt-1">
+                    <a href="grades.html">Grades</a>
+                  </li>
+                  <li class="second-navbar-item"><a href="#">People</a></li>
+                  <li class="second-navbar-item">
+                    <a href="#">Panopto Video</a>
+                  </li>
+                  <li class="second-navbar-item">
+                    <a href="#">Discussions</a>
+                  </li>
+                  <li class="second-navbar-item">
+                    <a href="#">Announcements</a>
+                  </li>
+                  <li class="second-navbar-item"><a href="#">Pages</a></li>
+                  <li class="second-navbar-item"><a href="#">Files</a></li>
+                  <li class="second-navbar-item"><a href="#">Rubrics</a></li>
+                  <li class="second-navbar-item"><a href="#">Outcomes</a></li>
+                  <li class="second-navbar-item">
+                    <a href="#">Collaborations</a>
+                  </li>
+                  <li class="second-navbar-item"><a href="#">Syllabus</a></li>
+                  <li class="second-navbar-item">
+                    <a href="#">Progress Reports[EAB Navigate]</a>
+                  </li>
+                  <li class="second-navbar-item"><a href="#">Settings</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 m-0 p-0">
+              <div class="row mb-3 me-5 justify-content-end">
+                <div class="col-2 text-center">
+                  <button
+                    type="button"
+                    class="w-100 rounded-1 p-1 m-0"
+                    style="border: 1px solid lightgray"
+                  >
+                    <i class="fa-solid fa-file-import pe-2"></i>Import
+                  </button>
+                </div>
+                <div class="col-2 text-center">
+                  <div class="dropdown">
+                    <button
+                      class="w-100 rounded-1 p-1 dropdown-toggle m-0"
+                      type="button"
+                      id="exportDropDown"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      style="border: 1px solid lightgray"
+                    >
+                      <i
+                        class="fa-solid fa-file-import fa-flip-horizontal pe-2"
+                      ></i
+                      >Export
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownExport">
+                      <a class="dropdown-item" href="#">...</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 text-center">
+                  <button
+                    type="button"
+                    class="w-50 rounded-1 p-1 m-0"
+                    style="border: 1px solid lightgray"
+                  >
+                    <i class="fa-solid fa-gear"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="row mt-1 mb-1 me-5">
+                <hr class="bg-black" />
+              </div>
+              <div class="row mt-1 mb-1 me-5">
+                <div class="col-sm-6">
+                  <label
+                    class="row font-weight-bold ps-4"
+                    for="StudentNameLabel"
+                    >Student Names</label
+                  >
+                  <div class="row m-0 p-0">
+                    <div class="dropdown">
+                      <button
+                        class="w-100 rounded-1 p-1 dropdown-toggle m-0 text-center"
+                        type="button"
+                        id="studentDropDown"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        style="
+                          border: 1px solid lightgray;
+                          background-color: white;
+                        "
+                      >
+                        <i
+                          class="fa-solid fa-magnifying-glass pe-2 float-start ps-3 pt-1 pb-1"
+                        ></i
+                        >Search Students
+                      </button>
+                      <div
+                        class="dropdown-menu float-end"
+                        aria-labelledby="dropdownstudent"
+                      >
+                        <a class="dropdown-item" href="#">...</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label
+                    class="row font-weight-bold ps-4"
+                    for="AssignmentNameLabel"
+                    >Assignment Names</label
+                  >
+                  <div class="row m-0 p-0">
+                    <div class="dropdown">
+                      <button
+                        class="w-100 rounded-1 p-1 dropdown-toggle m-0 text-center"
+                        type="button"
+                        id="assignmentDropDown"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        style="
+                          border: 1px solid lightgray;
+                          background-color: white;
+                        "
+                      >
+                        <i
+                          class="fa-solid fa-magnifying-glass pe-2 float-start ps-3 pt-1 pb-1"
+                        ></i
+                        >Search Assignments
+                      </button>
+                      <div
+                        class="dropdown-menu float-end"
+                        aria-labelledby="dropdownAssignment"
+                      >
+                        <a class="dropdown-item" href="#">...</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row p-2">
+                <div class="col-2">
+                  <button
+                    class="w-100 rounded-1 p-1 m-1 text-center"
+                    type="button"
+                    style="border: 1px solid lightgray"
+                  >
+                    <i
+                      class="fa-solid fa-filter pe-2 float-start ps-3 pt-1 pb-1"
+                    ></i
+                    >Apply Filters
+                  </button>
+                </div>
+                <div class="col-10"></div>
+              </div>
+
+              <div class="row p-2 mt-1 mb-1 me-5">
+                <div class="container">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th
+                          scope="col"
+                          style="width: 32%; vertical-align: middle"
+                        >
+                          Student Name
+                        </th>
+                        <th scope="col" style="width: 17%; text-align: center">
+                          A1 SETUP
+                          <br />
+                          Out of 100
+                        </th>
+                        <th scope="col" style="width: 17%; text-align: center">
+                          A2 HTML
+                          <br />Out of 100
+                        </th>
+                        <th scope="col" style="width: 17%; text-align: center">
+                          A3 CSS
+                          <br />Out of 100
+                        </th>
+                        <th scope="col" style="width: 17%; text-align: center">
+                          A4 BOOTSTRAP
+                          <br />Out of 100
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="red-table-name" scope="row">
+                          <a href="#">Doxa Asibey</a>
+                        </th>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">89.59%</td>
+                        <td style="text-align: center">98.65%</td>
+                      </tr>
+                      <tr>
+                        <th class="red-table-name" scope="row">
+                          <a href="#">Doxa Asibey</a>
+                        </th>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">
+                          <input
+                            class="rounded-1 w-50 text-center"
+                            type="text"
+                            style="border: 1px solid red; width: fit-content"
+                          />
+                        </td>
+                        <td style="text-align: center">98.65%</td>
+                      </tr>
+                      <tr>
+                        <th class="red-table-name" scope="row">
+                          <a href="#">Doxa Asibey</a>
+                        </th>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">89.59%</td>
+                        <td style="text-align: center">98.65%</td>
+                      </tr>
+                      <tr>
+                        <th class="red-table-name" scope="row">
+                          <a href="#">Doxa Asibey</a>
+                        </th>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">89.59%</td>
+                        <td style="text-align: center">98.65%</td>
+                      </tr>
+                      <tr>
+                        <th class="red-table-name" scope="row">
+                          <a href="#">Doxa Asibey</a>
+                        </th>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">89.59%</td>
+                        <td style="text-align: center">98.65%</td>
+                      </tr>
+                      <tr>
+                        <th class="red-table-name" scope="row">
+                          <a href="#">Doxa Asibey</a>
+                        </th>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">100%</td>
+                        <td style="text-align: center">89.59%</td>
+                        <td style="text-align: center">98.65%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <table>
+      <colgroup>
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td valign="TOP">
+            <ul>
+              <li><a href="../profile/index.html">Account</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="home.html">Courses</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Studio</a></li>
+              <li><a href="#">Commons</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </td>
+          <td valign="TOP">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="#">Modules</a></li>
+              <li><a href="#">Piazza</a></li>
+              <li><a href="#">Zoom Meetings</a></li>
+              <li><a href="assignments/index.html">Assignments</a></li>
+              <li><a href="#">Quizzes</a></li>
+              <li><a href="grades.html">Grades</a></li>
+              <li><a href="#">People</a></li>
+              <li><a href="#">Panopto Video</a></li>
+              <li><a href="#">Discussions</a></li>
+              <li><a href="#">Annoucements</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Files</a></li>
+              <li><a href="#">Rubrics</a></li>
+              <li><a href="#">Outcomes</a></li>
+              <li><a href="#">Collaborations</a></li>
+              <li><a href="#">Syllabus</a></li>
+              <li>
+                <a href="settings/course-details.html">Settings</a>
+              </li>
+            </ul>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <select>
+                    <option selected value="Gradebook">Gradebook</option>
+                    <option value="#">#</option>
+                  </select>
+                  &nbsp;
+                  <button type="button">Import</button>
+                  &nbsp;
+                  <select>
+                    <option selected value="Export">Export</option>
+                    <option value="#">#</option>
+                  </select>
+                  &nbsp;
+                  <button type="button">Configure</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>Student Names</h3>
+                  <input type="text" placeholder="Search Students" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>Assignment Names</h3>
+                  <input type="text" placeholder="Search Assignments" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <br /><button type="button">Apply Filters</button>
+                  <br /><br />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table border="3">
+                    <thead align="middle">
+                      <tr>
+                        <td>Student Name</td>
+                        <td>
+                          <table>
+                            <tbody align="middle">
+                              <tr>
+                                <td>A1 Setup</td>
+                              </tr>
+                              <tr>
+                                <td>Out of 100</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td>
+                          <table align="middle">
+                            <tr>
+                              <td>A2 HTML</td>
+                            </tr>
+                            <tr>
+                              <td>Out of 100</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td>
+                          <table align="middle">
+                            <tr>
+                              <td>A3 CSS</td>
+                            </tr>
+                            <tr>
+                              <td>Out of 100</td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td>
+                          <table align="middle">
+                            <tr>
+                              <td>A4 Bootstrap</td>
+                            </tr>
+                            <tr>
+                              <td>Out of 100</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody align="middle">
+                      <tr>
+                        <td align="left">Alice Wonderland</td>
+                        <td>
+                          <input type="text" value="88" size="2px" />
+                        </td>
+                        <td>89</td>
+                        <td>94</td>
+                        <td>99</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Bob Wonderland</td>
+                        <td>92</td>
+                        <td>89</td>
+                        <td>
+                          <input type="text" value="88" size="2px" />
+                        </td>
+                        <td>99</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Julie Wonderland</td>
+                        <td>94</td>
+                        <td>
+                          <input type="text" value="88" size="2px" />
+                        </td>
+                        <td>94</td>
+                        <td>99</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Danny Wonderland</td>
+                        <td>93</td>
+                        <td>89</td>
+                        <td>94</td>
+                        <td>
+                          <input type="text" value="88" size="2px" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>-->
+  </body>
+</html>
