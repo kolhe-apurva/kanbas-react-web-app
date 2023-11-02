@@ -1,0 +1,29 @@
+.northeastern-logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.nav-sidebar {
+  background-color: black;
+  list-style: none;
+  margin-right: 20px;
+  text-align: center;
+  width: 120px;
+  min-width: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.nav-sidebar > a {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.nav-sidebar > a.active {
+  background-color: #fff;
+  color: red;
+}
+.icon {
+  color: red;
+  font-size: 1.5em;
+}

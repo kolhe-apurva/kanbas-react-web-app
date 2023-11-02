@@ -1,0 +1,22 @@
+.remove-links-for-ass-name > a:link,
+.remove-links-for-ass-name > a:visited,
+.remove-links-for-ass-name > a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.remove-links-for-ass-name > a:hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
+  color: blue;
+}
+
+.assignment-edit-content {
+  margin-top: 50px;
+  width: 95%;
+}
+
+.buttons {
+  margin-top: 50px;
+  margin-left: 900px;
+}

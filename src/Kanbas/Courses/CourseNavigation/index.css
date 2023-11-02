@@ -1,0 +1,44 @@
+.second-navbar-item {
+  text-decoration: none;
+  color: #c41111;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.second-navbar-item.active,
+.second-navbar-item:active,
+.second-navbar-item:focus,
+.second-navbar-item:hover {
+  background-color: transparent !important;
+  border: none !important;
+  border-left: 2px black solid !important;
+  color: black !important;
+}
+
+.second-navbar-item:hover {
+  text-decoration: underline;
+  color: black;
+  font-weight: 500;
+}
+
+.second-sidebar-ul {
+  background-color: white;
+  height: 100%;
+  z-index: 1;
+  word-wrap: normal;
+  padding: 0;
+  margin: 0;
+  min-width: fit-content;
+}
+
+.second-sidebar-ul > ul {
+  width: 160px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+  word-wrap: normal;
+}
