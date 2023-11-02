@@ -5,13 +5,13 @@ import { LuFileEdit } from "react-icons/lu";
 function Dashboard() {
   const courses = db.courses;
   return (
-    <div>
+    <div className="container">
       <h1>Dashboard</h1>
       <hr />
       <h2>Published Courses ({courses.length})</h2>
       <hr />
 
-      <div className="row ms-1 me-2">
+      <div className="row ms-1 pe-3">
         {courses.map((course) => (
           <div
             className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 p-3"

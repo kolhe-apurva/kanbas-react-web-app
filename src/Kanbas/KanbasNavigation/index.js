@@ -37,7 +37,7 @@ function KanbasNavigation() {
   };
   const { pathname } = useLocation();
   return (
-    <div className="list-group nav-sidebar" style={{ width: "8vw" }}>
+    <div className="list-group nav-sidebar" size="150px">
       <img
         className="northeastern-university-logo"
         src="./Kanbas/northeastern-university-logo.png"
