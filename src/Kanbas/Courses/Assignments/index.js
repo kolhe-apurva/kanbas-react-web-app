@@ -1,18 +1,29 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { React, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { TbFilePencil } from "react-icons/tb";
 import { FaEllipsisVertical } from "react-icons/fa6";
 import { AiOutlinePlus } from "react-icons/ai";
-
-import db from "../../Database";
 import "./index.css";
-
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+} from "./assignmentsReducer";
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId
+  const assignments = useSelector(
+    (state) => state.assignmentsReducer.assignments
   );
+  const assignment = useSelector(
+    (state) => state.assignmentsReducer.assignment
+  );
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleNewAssignmentClick = () => {
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/newassignment`);
+  };
   return (
     <div>
       <div className="row mb-3 me-5">
@@ -42,6 +53,7 @@ function Assignments() {
                 className="ms-3 bg-danger w-100 rounded-1 p-1"
                 type="button"
                 style={{ color: "white", border: "1px solid lightcoral" }}
+                onClick={handleNewAssignmentClick}
               >
                 <AiOutlinePlus className="me-2" />
                 Assignment
@@ -91,42 +103,59 @@ function Assignments() {
             className="container collapse show m-0 p-0"
             style={{ borderLeft: "4px solid rgb(80, 166, 80)" }}
           >
-            {courseAssignments.map((assignment, index) => (
-              <Link
-                key={assignment._id}
-                to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                className="list-group-item pt-1 pb-1 ps-4 pe-4 align-items-center"
-                style={{ display: "flex" }}
-              >
-                <div className="float-left" style={{ width: "10%" }}>
-                  <TbFilePencil
-                    className="float-start"
-                    style={{ color: "#b5eeb4" }}
-                    size="30px"
-                  />
-                </div>
+            {assignments
+              .filter((assignment) => assignment.course === courseId)
+              .map((assignment, index) => (
                 <div
-                  className="float-none remove-links-for-ass-name"
-                  style={{ width: "70%" }}
+                  className="list-group-item align-items-center"
+                  style={{ display: "flex" }}
                 >
-                  <a
-                    href="edit.html"
-                    style={{ fontSize: 18, fontWeight: "500" }}
+                  <div className="float-left" style={{ width: "10%" }}>
+                    <TbFilePencil
+                      className="float-start"
+                      style={{ color: "#b5eeb4" }}
+                      size="30px"
+                    />
+                  </div>
+                  <div
+                    className="float-none remove-links-for-ass-name"
+                    style={{ width: "70%" }}
                   >
-                    {assignment._id} - {assignment.title}
-                  </a>
-                  <p style={{ fontSize: "small" }}>
-                    <b>Due</b> {assignment.due} | {assignment.points} pts
-                  </p>
+                    <Link
+                      key={assignment._id}
+                      to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                      className="remove-links-for-ass-name"
+                    >
+                      <a
+                        href="edit.html"
+                        style={{ fontSize: 18, fontWeight: "500" }}
+                      >
+                        {assignment._id} - {assignment.title}
+                      </a>
+                    </Link>
+                    <h6 style={{ fontSize: 14, color: "darkslategray" }}>
+                      {assignment.description}
+                    </h6>
+                    <p style={{ fontSize: "small" }}>
+                      <b>Available: </b>
+                      {assignment.availableFromDate} | <b>Until: </b>
+                      {assignment.availableUntilDate} | <b>Due: </b>{" "}
+                      {assignment.due} | {assignment.points} pts
+                    </p>
+                  </div>
+                  <div
+                    className="float-right align-items-top"
+                    style={{ width: "20%" }}
+                  >
+                    <button
+                      onClick={() => dispatch(deleteAssignment(assignment._id))}
+                      className="btn btn-danger me-2 float-end"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-                <div
-                  className="float-right align-items-top"
-                  style={{ width: "20%" }}
-                >
-                  <FaEllipsisVertical className="float-end me-2" />
-                </div>
-              </Link>
-            ))}
+              ))}
           </div>
         </div>
       </div>

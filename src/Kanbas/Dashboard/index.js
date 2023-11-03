@@ -1,18 +1,96 @@
 import { Link } from "react-router-dom";
-import db from "../Database";
+import { React, useState } from "react";
 import "./index.css";
 import { LuFileEdit } from "react-icons/lu";
-function Dashboard() {
-  const courses = db.courses;
+function Dashboard(props) {
   return (
     <div className="container">
       <h1>Dashboard</h1>
       <hr />
-      <h2>Published Courses ({courses.length})</h2>
+      <h2>Published Courses ({props.courses.length})</h2>
       <hr />
-
+      <h5 className="ms-2">Modify Course</h5>
+      <div className="d-flex flex-row">
+        <div className="col p-2">
+          <div className="row ps-3 pe-3">
+            <label>Course Name</label>
+          </div>
+          <div className="row ps-3 pe-3 mt-2">
+            <input
+              value={props.course.name}
+              className="form-control"
+              onChange={(e) =>
+                props.setCourse({ ...props.course, name: e.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="col p-2">
+          <div className="row ps-3 pe-3">
+            <label>Course Number</label>
+          </div>
+          <div className="row ps-3 pe-3 mt-2">
+            <input
+              value={props.course.number}
+              className="form-control "
+              onChange={(e) =>
+                props.setCourse({ ...props.course, number: e.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="col p-2">
+          <div className="row ps-3 pe-3">
+            <label>Course Start Date</label>
+          </div>
+          <div className="row ps-3 pe-3 mt-2">
+            <input
+              value={props.course.startDate}
+              className="form-control"
+              type="date"
+              onChange={(e) =>
+                props.setCourse({ ...props.course, startDate: e.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="col p-2">
+          <div className="row ps-3 pe-3">
+            <label>Course End Date</label>
+          </div>
+          <div className="row ps-3 pe-3 mt-2">
+            <input
+              value={props.course.endDate}
+              className="form-control"
+              type="date"
+              onChange={(e) =>
+                props.setCourse({ ...props.course, endDate: e.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="col p-2 ">
+          <div className="row ps-3 pe-3 pt-1 pb-1 justify-content-center">
+            <button
+              className="course-modify-button"
+              onClick={props.addNewCourse}
+            >
+              Add
+            </button>
+          </div>
+          <div className="row ps-3 pe-3  pt-1 pb-1 justify-content-center">
+            <button
+              className="course-modify-button "
+              onClick={props.updateCourse}
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr className="mt-4" />
       <div className="row ms-1 pe-3">
-        {courses.map((course) => (
+        {props.courses.map((course) => (
           <div
             className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 p-3"
             key={course._id}
@@ -23,11 +101,12 @@ function Dashboard() {
                   className="card-img-top img-fluid"
                   style={{ objectFit: "contain" }}
                   src="./Kanbas/Dashboard/purple_card.png"
-                  alt="Course 1"
+                  alt="Course"
                 />
               </div>
               <div className="card-body">
                 <Link
+                  key={course._id}
                   to={`/Kanbas/Courses/${course._id}`}
                   className="no-underline"
                 >
@@ -47,8 +126,34 @@ function Dashboard() {
                   </p>
                 </Link>
               </div>
-              <div className="icon icon-gray pb-4 ps-4">
-                <LuFileEdit />
+              <div className="icon icon-gray pb-4 ps-4 row">
+                <div className="col-6">
+                  <LuFileEdit size={35} />
+                </div>
+                <div className="col-6 container-fluid">
+                  <div className="row">
+                    <button
+                      className="course-modify-in-card-button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        props.setCourse(course);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <div className="row">
+                    <button
+                      className="course-modify-in-card-button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        props.deleteCourse(course._id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -19,3 +19,18 @@
 .icon-gray {
   color: gray;
 }
+
+.course-modify-button {
+  background-color: white;
+  border: 1px solid gray;
+  width: 40%;
+}
+
+.course-modify-in-card-button {
+  background-color: white;
+  border: 1px solid purple;
+  border-radius: 5px;
+  width: 60% !important;
+  font-size: medium;
+  margin: 3px;
+}

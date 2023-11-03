@@ -4,3 +4,34 @@
 .my-button {
   width: 100px !important;
 }
+.module-modify-button {
+  background-color: white;
+  border: 1px solid gray;
+  height: 60%;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 4px;
+  vertical-align: middle;
+  min-width: min-content;
+}
+
+.module-modify-in-card-button {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: medium;
+  margin: 2px;
+  margin-right: 4px;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+}
+.gray-heading {
+  background-color: lightgray;
+}
+
+.white-background {
+  background-color: white;
+}

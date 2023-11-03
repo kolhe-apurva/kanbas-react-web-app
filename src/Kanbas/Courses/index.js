@@ -10,9 +10,9 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import { GrInspect } from "react-icons/gr";
 
-function Courses() {
+function Courses(props) {
   const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
+  const course = props.courses?.find((course) => course._id === courseId);
   return (
     <div className="container-fluid" style={{ width: "90vw" }}>
       <div className="row pt-3 align-content-center align-items-center">
@@ -43,6 +43,10 @@ function Courses() {
             <Route path="Assignments" element={<Assignments />} />
             <Route
               path="Assignments/:assignmentId"
+              element={<AssignmentEditor />}
+            />
+            <Route
+              path="Assignments/:newassignment"
               element={<AssignmentEditor />}
             />
             <Route path="Grades" element={<Grades />} />
