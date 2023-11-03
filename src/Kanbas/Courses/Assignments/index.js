@@ -148,7 +148,14 @@ function Assignments() {
                     style={{ width: "20%" }}
                   >
                     <button
-                      onClick={() => dispatch(deleteAssignment(assignment._id))}
+                      onClick={() => {
+                        const userConfirmed = window.confirm(
+                          "Are you sure you want to delete this assignment?"
+                        );
+                        if (userConfirmed) {
+                          dispatch(deleteAssignment(assignment._id));
+                        }
+                      }}
                       className="btn btn-danger me-2 float-end"
                     >
                       Delete
