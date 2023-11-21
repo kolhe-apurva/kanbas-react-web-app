@@ -9,10 +9,20 @@ import { AiOutlineMenu } from "react-icons/ai";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import { GrInspect } from "react-icons/gr";
-
-function Courses(props) {
+import { useState, useEffect } from "react";
+import axios from "axios";
+function Courses() {
   const { courseId } = useParams();
-  const course = props.courses?.find((course) => course._id === courseId);
+  const URL = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
+
   return (
     <div className="container-fluid" style={{ width: "90vw" }}>
       <div className="row pt-3 align-content-center align-items-center">

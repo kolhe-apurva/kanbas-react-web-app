@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------FULL HEIGHT CSS ABOVE*/
+.side-navbar {
+  background-color: black;
+  padding: 0;
+  margin: 0; /*This doesnt work, so forced style into the col*/
+}
+
+/* Link reset to remove the underlines from links */
+.nav-item > a:link,
+.nav-item > a:visited,
+.nav-item > a:hover,
+.nav-item > a:active {
+  text-decoration: none;
+  color: white; /* Set the default link color to white */
+  padding: 0;
+  margin: 0;
+}
+
+.side-navbar > ul > li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.side-navbar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.side-navbar-text {
+  font-size: 15px;
+  padding: 0; /* Adjust padding to meet spacing requirements */
+}
+
+/* Icons */
+.icon {
+  color: red; /* Default color for icons */
+  padding: 3px 3px;
+}
+
+/*------------------------------------------------------------------------------------------------MAIN BLACK LEFT SIDEBAR CSS ABOVE*/
+/*Page heading css*/
+
+.page-heading {
+  color: #4f4f4f;
+  font-weight: 200;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.page-heading-icon {
+  color: #4f4f4f;
+  padding: 10px 3px;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.container-fluid {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/*-------------------------------------- card-hyperlinks removed-----------------------*/
+
+/* Link reset to remove the underlines from links */
+.card-body > a:link,
+.card-body > a:visited,
+.card-body > a:active {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-body > a:hover {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.gray-text {
+  color: gray;
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+
+.second-navbar-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 2px;
+}
+
+.second-navbar-item > a {
+  text-decoration: none;
+  color: #c41111;
+  font-weight: 500;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/*show underline on links when hover*/
+.second-navbar-item > a:hover {
+  text-decoration: underline;
+  color: #c41111;
+  font-weight: 500;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.second-navbar-active-item > a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  border-left: 2px solid black;
+  padding-left: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*show underline on links when hover*/
+.second-navbar-active-item > a:hover {
+  text-decoration: underline;
+  color: black;
+  font-weight: 500;
+}
+
+.second-sidebar-ul {
+  width: 190px;
+  background-color: white;
+  height: 100%;
+  z-index: 1;
+  word-wrap: normal;
+}
+
+.second-sidebar-ul > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+  word-wrap: normal;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+.bg-color-white {
+  background-color: white;
+}
+
+.breadcrumb {
+  background-color: white;
+}
+
+button {
+  width: 100%;
+  display: block;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+.list-group-item {
+  border: none;
+}
+
+.list-group-item:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.list-group-item-secondary {
+  background-color: #e9ecef;
+}
+
+/*----------------------------------------*/
+.red-table-name > a:link,
+.red-table-name > a:visited,
+.red-table-name > a:active {
+  text-decoration: none;
+  color: red;
+}
+
+.red-table-name > a:hover {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+/*--------------------------------------------*/
+.remove-links-for-ass-name > a:link,
+.remove-links-for-ass-name > a:visited,
+.remove-links-for-ass-name > a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.remove-links-for-ass-name > a:hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
+  color: blue;
+}

@@ -1,15 +1,15 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { BsCheckCircle } from "react-icons/bs";
+import * as client from "../client.js";
 import "../index.css";
 import {
   addAssignment,
-  deleteAssignment,
   updateAssignment,
   setAssignment,
+  resetAssignment,
 } from "../assignmentsReducer";
 import { useEffect } from "react";
 function AssignmentEditor() {
@@ -22,29 +22,41 @@ function AssignmentEditor() {
   const navigate = useNavigate();
   const handleSave = () => {
     if (newassignment) {
-      dispatch(addAssignment({ ...assignment, course: courseId }));
+      handleAddAssignment();
     } else {
-      dispatch(updateAssignment({ ...assignment, course: courseId }));
+      console.log("EDIT CALL IN HANDLESAVE");
+      handleUpdateAssignment();
     }
     navigate(-1);
   };
-
-  let newAssignment = useSelector(
-    (state) => state.assignmentsReducer.assignment
-  );
-  console.log("id is " + assignmentId);
-  console.log(assignments);
-  let assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId
-  );
-  let newassignment = assignmentId === "newassignment";
-  if (newassignment) {
-    assignment = newAssignment;
-  }
-  const handleAssignmentChange = (field, value) => {
+  let assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  let handleAssignmentChange = (field, value) => {
     dispatch(setAssignment({ ...assignment, [field]: value }));
   };
-  console.log(assignment);
+  //if new assignment set a boolean
+  let newassignment = assignmentId === "newassignment";
+  useEffect(() => {
+    if (!newassignment) {
+      const existingAssignment = assignments.find(
+        (assignment) => assignment._id === assignmentId
+      );
+      if (existingAssignment) {
+        dispatch(setAssignment(existingAssignment));
+      }
+    } else {
+      dispatch(resetAssignment());
+    }
+  }, [assignmentId, assignments, dispatch, newassignment]);
+  const handleAddAssignment = () => {
+    client.createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
+  const handleUpdateAssignment = async () => {
+    console.log("EDIT CALL IN HANDLE-UPDATE-ASSIGNMENT");
+    const status = await client.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
   return (
     <div>
       <li className="list-group-item">

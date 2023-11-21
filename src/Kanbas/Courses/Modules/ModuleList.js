@@ -1,16 +1,42 @@
-import { React, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import db from "../../Database";
 import { useSelector, useDispatch } from "react-redux";
+import * as client from "./client";
 import "./index.css";
 import {
   addModule,
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
 function ModuleList() {
   const { courseId } = useParams();
+  useEffect(() => {
+    console.log("giving a call to module : ");
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
+  }, [courseId]);
+
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      console.log("dispatch delete module id :: ", moduleId);
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
   console.log(modules);
@@ -59,9 +85,7 @@ function ModuleList() {
             <div className="row" style={{ width: "100%", height: "50%" }}>
               <button
                 className="module-modify-button"
-                onClick={() =>
-                  dispatch(addModule({ ...module, course: courseId }))
-                }
+                onClick={handleAddModule}
               >
                 Add
               </button>
@@ -69,7 +93,7 @@ function ModuleList() {
             <div className="row" style={{ width: "100%", height: "50%" }}>
               <button
                 className="module-modify-button"
-                onClick={() => dispatch(updateModule(module))}
+                onClick={handleUpdateModule}
               >
                 Update
               </button>
@@ -94,7 +118,7 @@ function ModuleList() {
                 </button>
                 <button
                   className="module-modify-in-card-button"
-                  onClick={() => dispatch(deleteModule(module._id))}
+                  onClick={() => handleDeleteModule(module._id)}
                 >
                   Delete
                 </button>

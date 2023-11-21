@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------FULL HEIGHT CSS ABOVE*/
+.side-navbar {
+  background-color: black;
+  padding: 0;
+  margin: 0; /*This doesnt work, so forced style into the col*/
+}
+
+/* Link reset to remove the underlines from links */
+.nav-item > a:link,
+.nav-item > a:visited,
+.nav-item > a:hover,
+.nav-item > a:active {
+  text-decoration: none;
+  color: white; /* Set the default link color to white */
+  padding: 0;
+  margin: 0;
+}
+
+.side-navbar > ul > li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.side-navbar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.side-navbar-text {
+  font-size: 15px;
+  padding: 0; /* Adjust padding to meet spacing requirements */
+}
+
+/* Icons */
+.icon {
+  color: red; /* Default color for icons */
+  padding: 3px 3px;
+}
+
+/*------------------------------------------------------------------------------------------------MAIN BLACK LEFT SIDEBAR CSS ABOVE*/
+/*Page heading css*/
+
+.page-heading {
+  color: #4f4f4f;
+  font-weight: 200;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.page-heading-icon {
+  color: #4f4f4f;
+  padding: 10px 3px;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.container-fluid {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/*-------------------------------------- card-hyperlinks removed-----------------------*/
+
+/* Link reset to remove the underlines from links */
+.card-body > a:link,
+.card-body > a:visited,
+.card-body > a:active {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-body > a:hover {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.gray-text {
+  color: gray;
+}

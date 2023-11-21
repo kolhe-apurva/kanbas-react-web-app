@@ -1,15 +1,18 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { TbFilePencil } from "react-icons/tb";
 import { FaEllipsisVertical } from "react-icons/fa6";
 import { AiOutlinePlus } from "react-icons/ai";
+import * as client from "./client.js";
 import "./index.css";
 import {
   addAssignment,
   deleteAssignment,
   updateAssignment,
   setAssignment,
+  resetAssignment,
+  setAssignments,
 } from "./assignmentsReducer";
 function Assignments() {
   const { courseId } = useParams();
@@ -19,6 +22,18 @@ function Assignments() {
   const assignment = useSelector(
     (state) => state.assignmentsReducer.assignment
   );
+  useEffect(() => {
+    console.log("giving a call to show ASSIGNMENTS : ");
+    client
+      .findAssignmentsForCourse(courseId)
+      .then((assignments) => dispatch(setAssignments(assignments)));
+  }, [courseId]);
+  const handleDeleteAssignment = (assignmentId) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      console.log("dispatch delete module id :: ", assignmentId);
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleNewAssignmentClick = () => {
@@ -125,6 +140,13 @@ function Assignments() {
                       key={assignment._id}
                       to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                       className="remove-links-for-ass-name"
+                      onChange={(e) =>
+                        dispatch(
+                          setAssignment({
+                            ...assignment,
+                          })
+                        )
+                      }
                     >
                       <a
                         href="edit.html"
@@ -153,7 +175,7 @@ function Assignments() {
                           "Are you sure you want to delete this assignment?"
                         );
                         if (userConfirmed) {
-                          dispatch(deleteAssignment(assignment._id));
+                          handleDeleteAssignment(assignment._id);
                         }
                       }}
                       className="btn btn-danger me-2 float-end"
