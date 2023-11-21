@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 function WorkingWithArrays() {
   const [errorMessage, setErrorMessage] = useState(null);
-  const API = "http://localhost:4000/a5/todos";
+  const A5_BASE = process.env.REACT_APP_A5_BASE;
+  const API = `${A5_BASE}/todos`;
   const [todo, setTodo] = useState({
     id: 1,
     title: "NodeJS Assignment",

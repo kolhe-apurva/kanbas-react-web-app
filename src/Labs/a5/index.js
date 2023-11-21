@@ -7,7 +7,7 @@ function Assignment5() {
     <div>
       <h1>Assignment 5</h1>
       <div className="list-group">
-        <a href="http://localhost:4000/a5/welcome" className="list-group-item">
+        <a href="${A5_BASE}/welcome" className="list-group-item">
           Welcome! Click Here!
         </a>
       </div>
